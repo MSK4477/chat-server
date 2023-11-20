@@ -16,7 +16,7 @@
 
 // const io = new Server(server, {
 //   cors: {
-//     origin: "http://localhost:5173",
+//     origin: "https://master--illustrious-taiyaki-be5c11.netlify.app",
 //     methods: ["GET", "POST"],
 //   },
 // });
@@ -38,7 +38,7 @@
 // app.use(cookieParser())
 // app.use(express.json())
 
-// const allowedOrgins = ["http://localhost:5173"]
+// const allowedOrgins = ["https://master--illustrious-taiyaki-be5c11.netlify.app"]
 // const corsOptions = {
 //     origin:allowedOrgins,
 //     credentials: true,
@@ -84,7 +84,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://master--illustrious-taiyaki-be5c11.netlify.app",
     methods: ["GET", "POST"],
     credentials:true
   },
@@ -94,7 +94,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://master--illustrious-taiyaki-be5c11.netlify.app",
     credentials: true,
   })
 );
