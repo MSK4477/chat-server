@@ -91,10 +91,7 @@ export const login = asyncHandler(async (req, res) => {
         .status(200)
         .json({ message: "User Logged In Successfully", code: 1, user: user });
       req.id = user._id;
-console.log(req)
-      const {token} = req.cookies
 
-      console.log('res', token);
 
     } else {
       res.status(400).json({ error: "User Login Failed", code: 0 });

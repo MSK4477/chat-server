@@ -1,5 +1,3 @@
-
-
 import express from "express";
 import cors from "cors"
 import connectDb from "./data/connectToDb/connectToDb.js";
@@ -18,7 +16,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://master--illustrious-taiyaki-be5c11.netlify.app",
+    origin: "https://illustrious-taiyaki-be5c11.netlify.app",
     methods: ["GET", "POST"],
     credentials:true
   },
@@ -28,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://master--illustrious-taiyaki-be5c11.netlify.app",
+    origin: "https://illustrious-taiyaki-be5c11.netlify.app",
     credentials: true,
   })
 );
