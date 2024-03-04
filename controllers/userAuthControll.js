@@ -23,7 +23,7 @@ export const register = asyncHandler(async (req, res) => {
   }
 
   const Token = generateToken(email);
-  const link = `http://localhost:5173/verify?token=${Token}`;
+  const link = `https://master--illustrious-taiyaki-be5c11.netlify.app/verify?token=${Token}`;
   const to = email;
   const subject = ` Verify Your Email  `;
   const text = `<h1>Hello ${name} !!</h1>         
