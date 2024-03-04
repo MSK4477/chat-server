@@ -11,8 +11,8 @@ const generateAccessToken = (response, id) => {
       secure: true, 
       httpOnly: true,
   });
+ 
 
-  console.log(response.id, "from tkn Generator man ? ")
 
 };
 

@@ -6,7 +6,6 @@ dotenv.config();
 
 const protect = asyncHandler(async (req, res, next) => {
   const { token } = req.cookies;
-  console.log(token, "from cookies")
   if (!token) {
     res.status(403).json({ error: "Unauthorized User" });
     return;
@@ -21,9 +20,7 @@ const protect = asyncHandler(async (req, res, next) => {
     }
     req.id = findUser._id;
 
-    // if(!req.id){
-        
-    // }
+   
     next();
   } catch (err) {
     console.log(err);
@@ -31,3 +28,4 @@ const protect = asyncHandler(async (req, res, next) => {
 });
 
 export default protect;
+

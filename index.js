@@ -21,6 +21,7 @@ const io = new Server(server, {
     credentials:true
   },
 });
+
 await connectDb()
 app.use(express.json());
 app.use(cookieParser());
@@ -51,12 +52,11 @@ io.on('connection', (socket) => {
     console.log(`User ${socket.id} joined room ${room}`);
   });
 
-  socket.on('send-message', (data) => {
-    console.log('Received message from client:', data);
+ socket.on('send-message', (data) => {
+  console.log('Received message from client:', data);
 
-    io.to(data.room).emit('receive-message', data);
-  });
-
+  io.to(data.room).emit('receive-message', data);
+});
   socket.on('disconnect', () => {
     console.log(`User disconnected: ${socket.id}`);
   });
@@ -65,3 +65,17 @@ io.on('connection', (socket) => {
 server.listen(PORT, () => {
   console.log(`App is running on PORT ${PORT}`);
 });
+
+const handleSubmit = async (e) => {
+
+  e.preventDefault()
+  
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  });
+  return await response.json();
+};
